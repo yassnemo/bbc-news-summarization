@@ -30,9 +30,7 @@ def setup_nltk():
 
 def clean_text(text):
     """Clean text before processing"""
-    # Remove extra whitespace
     text = ' '.join(text.split())
-    # Remove special characters but keep sentence endings
     text = re.sub(r'[^\w\s.!?]', '', text)
     return text
 
@@ -42,13 +40,11 @@ def simple_tokenize(text):
     sentences = re.split(r'(?<=[.!?])\s+', text)
     return [s.strip() for s in sentences if s.strip()]
 
-# ...rest of your code remains the same...
-
 def summarize_text(text, n_sentences=3):
     """Generate text summary with improved fallback"""
     try:
         text = clean_text(text)
-        sentences = simple_tokenize(text)  # Use simple tokenizer first
+        sentences = simple_tokenize(text)  
         
         if len(sentences) <= n_sentences:
             return text
