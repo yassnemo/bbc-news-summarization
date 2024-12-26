@@ -1,0 +1,13 @@
+    #for web scraping
+beautifulsoup4
+requests
+    #for nlp
+nltk
+    #for data handling
+pandas
+    #for html parssing
+lxml
+    #for development dependencies
+pytest
+black
+flake
